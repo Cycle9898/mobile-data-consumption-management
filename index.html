@@ -8,90 +8,113 @@
 		<link rel="icon" type="image/png" href="./src/assets/favicon.png" />
 	</head>
 
-	<body>
-		<header>
-			<h1>
+	<body class="flex flex-col items-center">
+		<header class="py-20 px-6">
+			<h1 class="text-3xl">
 				Gestion de la consommation des données mobiles de votre forfait
 			</h1>
 		</header>
 
 		<main>
-			<section>
-				<h2>Détails de votre forfait</h2>
+			<section class="py-12 px-6">
+				<h2 class="mb-5 text-2xl">Détails de votre forfait</h2>
 
-				<form>
-					<label for="data-quantity">
-						Quantité de données disponibles (en gigas) :
-					</label>
+				<form class="flex flex-col gap-y-14">
+					<div>
+						<label for="data-quantity">
+							Quantité de données disponibles (en gigas) :
+						</label>
 
-					<input
-						id="data-quantity"
-						name="data-quantity"
-						type="number"
-						min="1"
-						required />
+						<input
+							class="border-solid border-2"
+							id="data-quantity"
+							name="data-quantity"
+							type="number"
+							min="1"
+							required />
+					</div>
 
-					<label for="billing-day"> Jour de la facturation : </label>
+					<div>
+						<label for="billing-day">
+							Jour de la facturation :
+						</label>
 
-					<select name="billing-day" id="billing-day" required>
-						<option value="" selected disabled hidden>
-							Veuillez choisir un jour
-						</option>
-						<option value="1">01</option>
-						<option value="2">02</option>
-						<option value="3">03</option>
-						<option value="4">04</option>
-						<option value="5">05</option>
-						<option value="6">06</option>
-						<option value="7">07</option>
-						<option value="8">08</option>
-						<option value="9">09</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-						<option value="13">13</option>
-						<option value="14">14</option>
-						<option value="15">15</option>
-						<option value="16">16</option>
-						<option value="17">17</option>
-						<option value="18">18</option>
-						<option value="19">19</option>
-						<option value="20">20</option>
-						<option value="21">21</option>
-						<option value="22">22</option>
-						<option value="23">23</option>
-						<option value="24">24</option>
-						<option value="25">25</option>
-						<option value="26">26</option>
-						<option value="27">27</option>
-						<option value="28">28</option>
-						<option value="29">29</option>
-						<option value="30">30</option>
-						<option value="31">31</option>
-					</select>
+						<select
+							name="billing-day"
+							id="billing-day"
+							required
+							class="border-solid border-2">
+							<option value="" selected disabled hidden>
+								Veuillez choisir un jour
+							</option>
+							<option value="1">01</option>
+							<option value="2">02</option>
+							<option value="3">03</option>
+							<option value="4">04</option>
+							<option value="5">05</option>
+							<option value="6">06</option>
+							<option value="7">07</option>
+							<option value="8">08</option>
+							<option value="9">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+						</select>
+					</div>
 
-					<button type="submit">Calcul</button>
+					<button
+						type="submit"
+						class="w-fit border-solid border-2 py-2.5 px-5 rounded-md m-auto">
+						Calcul
+					</button>
 				</form>
 			</section>
 
-			<section>
-				<h2>Résultats</h2>
+			<section class="py-12 px-6">
+				<h2 class="text-2xl">Résultats</h2>
 
-				<div>
-					<div id="avg-result"></div>
+				<div class="m-5">
+					<span id="avg-result"></span>
 				</div>
 
-				<div>
+				<div class="flex flex-col">
 					<table>
-						<caption>
+						<caption class="caption-bottom py-3">
 							Seuil de données à ne pas dépasser en fonction du
 							jour du mois (en gigas)
 						</caption>
 
 						<thead>
 							<tr>
-								<th scope="col">Jour du mois</th>
-								<th scope="col">Seuil de données (en gigas)</th>
+								<th
+									scope="col"
+									class="border-solid border-2 py-5">
+									Jour du mois
+								</th>
+								<th
+									scope="col"
+									class="border-solid border-2 py-5">
+									Seuil de données (en gigas)
+								</th>
 							</tr>
 						</thead>
 
