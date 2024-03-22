@@ -1,12 +1,12 @@
 import "../style/style.css";
-import { displayAvgDataConsumption, generateDaysObjArray } from "./utils";
+import { displayAvgDataConsumption, generateDaysObjArray, generateTableBody } from "./utils";
 
 // DOM elements
 const dataQuantityInput = document.getElementById("data-quantity") as HTMLInputElement;
 const billingDaySelect = document.getElementById("billing-day") as HTMLSelectElement;
 const planDetailsForm = document.getElementById("plan-details-form");
 export const avgResultsSpan = document.getElementById("avg-result") as HTMLSpanElement;
-const resultsTableBody = document.getElementById("results-table-body");
+export const resultsTableBody = document.getElementById("results-table-body");
 
 // Main function
 function displayDataConsumption(event: SubmitEvent) {
@@ -27,7 +27,9 @@ function displayDataConsumption(event: SubmitEvent) {
 
 	displayAvgDataConsumption(avgDataConsumption);
 
-	console.log(daysObjArray);
+	// Data consumption table body view
+	generateTableBody(daysObjArray, avgDataConsumption);
 }
+
 // Event listener
 planDetailsForm?.addEventListener("submit", event => displayDataConsumption(event));

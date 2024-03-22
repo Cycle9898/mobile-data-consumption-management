@@ -1,4 +1,4 @@
-import { avgResultsSpan } from "./main";
+import { avgResultsSpan, resultsTableBody } from "./main";
 
 type DaysObjType = {
 	dayNb: string;
@@ -21,7 +21,7 @@ const months: string[] = [
 ];
 
 export function generateDaysObjArray(billingDay: number) {
-	const today: Date = new Date(2024, 5, 5);
+	const today: Date = new Date();
 	const currentMonthDaysNb: number = 32 - new Date(today.getFullYear(), today.getMonth(), 32).getDate();
 	const nextMonthDaysNb: number = 32 - new Date(today.getFullYear(), today.getMonth() + 1, 32).getDate();
 	const daysObjArray: DaysObjType[] = [];
@@ -57,4 +57,33 @@ export function displayAvgDataConsumption(avgDataConsumption: number) {
 	avgResultsSpan.innerText = sentence;
 }
 
-export function generateTableBody() {}
+function deleteAllChildrenElements() {
+	while (resultsTableBody?.firstChild) {
+		resultsTableBody.removeChild(resultsTableBody.firstChild);
+	}
+}
+
+export function generateTableBody(daysObjArray: DaysObjType[], avgDataConsumption: number) {
+	// delete all table body rows
+	deleteAllChildrenElements();
+
+	// generate table body rows
+	daysObjArray.forEach((daysObj, index) => {
+		const dataConsumptionNb = (index + 1) * avgDataConsumption;
+
+		const tableRow = document.createElement("tr");
+
+		const dayCell = document.createElement("td");
+		dayCell.innerText = `${daysObj.dayNb} ${daysObj.month}`;
+		tableRow.appendChild(dayCell);
+
+		const dataConsumptionCell = document.createElement("td");
+		dataConsumptionCell.innerText = `${dataConsumptionNb.toLocaleString("fr-FR", {
+			maximumFractionDigits: 2,
+			minimumFractionDigits: 2
+		})} Go`;
+		tableRow.appendChild(dataConsumptionCell);
+
+		resultsTableBody?.appendChild(tableRow);
+	});
+}
