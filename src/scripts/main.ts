@@ -1,0 +1,27 @@
+import "../style/style.css";
+import { generateDaysObjArray } from "./utils";
+
+// DOM elements
+const dataQuantityInput = document.getElementById("data-quantity") as HTMLInputElement;
+const billingDaySelect = document.getElementById("billing-day") as HTMLSelectElement;
+const planDetailsForm = document.getElementById("plan-details-form");
+const avgResultsSpan = document.getElementById("avg-result");
+const resultsTableBody = document.getElementById("results-table-body");
+
+// Main function
+function displayDataConsumption(event: SubmitEvent) {
+	event.preventDefault();
+
+	const dataQuantity: number = parseInt(dataQuantityInput.value);
+	const billingDayNb: number = parseInt(billingDaySelect.value);
+
+	if (!dataQuantity || !billingDayNb) {
+		return;
+	}
+
+	const daysObjArray = generateDaysObjArray(billingDayNb);
+
+	console.log(daysObjArray);
+}
+// Event listener
+planDetailsForm?.addEventListener("submit", event => displayDataConsumption(event));

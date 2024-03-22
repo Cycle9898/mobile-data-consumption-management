@@ -10,20 +10,16 @@
 
 	<body class="flex flex-col items-center">
 		<header class="py-20 px-6">
-			<h1 class="text-3xl">
-				Gestion de la consommation des données mobiles de votre forfait
-			</h1>
+			<h1 class="text-3xl">Gestion de la consommation des données mobiles de votre forfait</h1>
 		</header>
 
 		<main>
 			<section class="py-12 px-6">
 				<h2 class="mb-5 text-2xl">Détails de votre forfait</h2>
 
-				<form class="flex flex-col gap-y-14">
+				<form class="flex flex-col gap-y-14" id="plan-details-form">
 					<div>
-						<label for="data-quantity">
-							Quantité de données disponibles (en gigas) :
-						</label>
+						<label for="data-quantity"> Quantité de données disponibles (en gigas) : </label>
 
 						<input
 							class="border-solid border-2"
@@ -35,18 +31,10 @@
 					</div>
 
 					<div>
-						<label for="billing-day">
-							Jour de la facturation :
-						</label>
+						<label for="billing-day"> Jour de la facturation : </label>
 
-						<select
-							name="billing-day"
-							id="billing-day"
-							required
-							class="border-solid border-2">
-							<option value="" selected disabled hidden>
-								Veuillez choisir un jour
-							</option>
+						<select name="billing-day" id="billing-day" required class="border-solid border-2">
+							<option value="" selected disabled hidden>Veuillez choisir un jour</option>
 							<option value="1">01</option>
 							<option value="2">02</option>
 							<option value="3">03</option>
@@ -81,9 +69,7 @@
 						</select>
 					</div>
 
-					<button
-						type="submit"
-						class="w-fit border-solid border-2 py-2.5 px-5 rounded-md m-auto">
+					<button type="submit" class="w-fit border-solid border-2 py-2.5 px-5 rounded-md m-auto">
 						Calcul
 					</button>
 				</form>
@@ -99,31 +85,22 @@
 				<div class="flex flex-col">
 					<table>
 						<caption class="caption-bottom py-3">
-							Seuil de données à ne pas dépasser en fonction du
-							jour du mois (en gigas)
+							Seuil de données à ne pas dépasser en fonction du jour du mois (en gigas)
 						</caption>
 
 						<thead>
 							<tr>
-								<th
-									scope="col"
-									class="border-solid border-2 py-5">
-									Jour du mois
-								</th>
-								<th
-									scope="col"
-									class="border-solid border-2 py-5">
-									Seuil de données (en gigas)
-								</th>
+								<th scope="col" class="border-solid border-2 py-5">Jour du mois</th>
+								<th scope="col" class="border-solid border-2 py-5">Seuil de données (en gigas)</th>
 							</tr>
 						</thead>
 
-						<tbody></tbody>
+						<tbody id="results-table-body"></tbody>
 					</table>
 				</div>
 			</section>
 		</main>
 
-		<script type="module" src="./src/main.ts"></script>
+		<script type="module" src="./src/scripts/main.ts"></script>
 	</body>
 </html>

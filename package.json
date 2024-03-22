@@ -1,20 +1,20 @@
 {
-  "name": "mobile-data-consumption-management",
-  "private": true,
-  "version": "1.0.0",
-  "description": "A simple website to help you manage the data consumption of your mobile plan",
-  "author": "Cycle9898",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.18",
-    "postcss": "^8.4.37",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.2.2",
-    "vite": "^5.1.6"
-  }
+	"name": "mobile-data-consumption-management",
+	"private": true,
+	"version": "1.0.0",
+	"description": "A simple website to help you manage the data consumption of your mobile plan",
+	"author": "Cycle9898",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.18",
+		"postcss": "^8.4.37",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5.2.2",
+		"vite": "^5.1.6"
+	}
 }
