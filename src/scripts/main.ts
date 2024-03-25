@@ -6,6 +6,7 @@ import { generateTableBody } from "./generateTableBody";
 // DOM elements
 const dataQuantityInput = document.getElementById("data-quantity") as HTMLInputElement;
 const billingDaySelect = document.getElementById("billing-day") as HTMLSelectElement;
+const resultsSection = document.getElementById("results-section");
 const planDetailsForm = document.getElementById("plan-details-form");
 
 // Main function
@@ -19,6 +20,9 @@ function displayDataConsumption(event: SubmitEvent) {
 	if (!dataQuantity || !billingDayNb) {
 		return;
 	}
+
+	// Display results section
+	resultsSection?.classList.remove("hidden");
 
 	const daysObjArray = generateDaysObjArray(billingDayNb);
 
