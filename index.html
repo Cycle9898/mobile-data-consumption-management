@@ -13,16 +13,20 @@
 			<h1 class="text-3xl">Gestion de la consommation des données mobiles de votre forfait</h1>
 		</header>
 
-		<main>
-			<section class="py-12 px-6">
-				<h2 class="mb-5 text-2xl">Détails de votre forfait</h2>
+		<main class="w-8/12">
+			<section class="py-12 px-6 bg-cyan-50 rounded-lg">
+				<h2 class="font-bold text-2xl text-center m-auto mb-5 p-2 border-y-4 border-cyan-600">
+					Détails de votre forfait
+				</h2>
 
 				<form class="flex flex-col gap-y-14" id="plan-details-form">
 					<div>
-						<label for="data-quantity"> Quantité de données disponibles (en gigas) : </label>
+						<label for="data-quantity" class="text-lg">
+							Quantité de données disponibles (en gigas) :
+						</label>
 
 						<input
-							class="border-solid border-2"
+							class="border-cyan-600 border-2 rounded w-16 text-lg"
 							id="data-quantity"
 							name="data-quantity"
 							type="number"
@@ -31,10 +35,13 @@
 					</div>
 
 					<div>
-						<label for="billing-day"> Jour de la facturation : </label>
+						<label for="billing-day" class="text-lg"> Jour de la facturation : </label>
 
-						<select name="billing-day" id="billing-day" required class="border-solid border-2">
-							<option value="" selected disabled hidden>Veuillez choisir un jour</option>
+						<select
+							name="billing-day"
+							id="billing-day"
+							required
+							class="border-cyan-600 border-2 w-12 rounded bg-white text-lg">
 							<option value="1">01</option>
 							<option value="2">02</option>
 							<option value="3">03</option>
@@ -69,7 +76,9 @@
 						</select>
 					</div>
 
-					<button type="submit" class="w-fit border-solid border-2 py-2.5 px-5 rounded-md m-auto">
+					<button
+						type="submit"
+						class="w-fit border-solid border-2 border-cyan-600 bg-cyan-600 hover:bg-cyan-300 hover:text-black text-white text-xl font-semibold py-2.5 px-5 rounded-md m-auto">
 						Calcul
 					</button>
 				</form>
@@ -82,7 +91,7 @@
 					<span id="avg-result"></span>
 				</div>
 
-				<div class="flex flex-col">
+				<div class="flex flex-col w-fit m-auto">
 					<table class="border-separate border-2 border-solid border-cyan-600 rounded-lg text-center">
 						<caption class="caption-top p-2 font-semibold text-lg text-nowrap">
 							Seuil de données à ne pas dépasser en fonction de la date (en gigas)
