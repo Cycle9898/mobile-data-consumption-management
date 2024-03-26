@@ -18,7 +18,7 @@ export function generateTableBody(daysObjArray: DaysObjType[], avgDataConsumptio
 		const dataConsumptionNb = (index + 1) * avgDataConsumption;
 
 		const tableRow = document.createElement("tr");
-		tableRow.classList.add("even:bg-cyan-500", "hover:bg-cyan-300", "text-lg");
+		tableRow.classList.add("even:bg-cyan-200", "hover:bg-cyan-600", "hover:text-white", "text-lg");
 
 		const dayCell = document.createElement("td");
 		dayCell.classList.add("py-1");
