@@ -9,12 +9,15 @@
 	</head>
 
 	<body class="flex flex-col items-center">
-		<header class="py-20 px-6">
-			<h1 class="text-3xl">Gestion de la consommation des données mobiles de votre forfait</h1>
+		<header
+			class="w-8/12 py-20 px-6 before:rounded-lg mb-5 relative before:absolute before:opacity-50 before:bg-cover before:z-[-1] before:inset-0">
+			<h1 class="text-center text-5xl font-bold text-cyan-600">
+				Gestion de la consommation des données mobiles de votre forfait
+			</h1>
 		</header>
 
 		<main class="w-8/12">
-			<section class="py-12 px-6 bg-cyan-50 rounded-lg">
+			<section class="py-12 px-6 bg-gray-50 rounded-lg border border-cyan-600 mb-5">
 				<h2 class="font-bold text-2xl text-center m-auto mb-5 p-2 border-y-4 border-cyan-600">
 					Détails de votre forfait
 				</h2>
@@ -84,16 +87,16 @@
 				</form>
 			</section>
 
-			<section id="results-section" class="py-12 px-6 hidden">
+			<section id="results-section" class="py-12 px-6 hidden bg-gray-50 rounded-lg border border-cyan-600 mb-5">
 				<h2 class="font-bold text-2xl text-center m-auto mb-5 p-2 border-y-4 border-cyan-600">Résultats</h2>
 
 				<div class="mb-10 text-lg">
 					<span id="avg-result"></span>
 				</div>
 
-				<div class="flex flex-col w-fit m-auto">
+				<div class="flex flex-col m-auto">
 					<table class="border-separate border-2 border-solid border-cyan-600 rounded-lg text-center">
-						<caption class="caption-top p-2 font-semibold text-lg text-nowrap">
+						<caption class="caption-top p-2 font-semibold text-lg">
 							Seuil de données à ne pas dépasser en fonction de la date (en gigas)
 						</caption>
 
