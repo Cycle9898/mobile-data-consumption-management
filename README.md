@@ -6,7 +6,7 @@ Il suffit de saisir le nombre de gigas totaux de votre forfait et le jour de fac
 
 La section des résultats apparaît alors avec un tableau détaillant le rationnement des données mobiles.
 
-## Commencement
+## Démarrer le projet
 
 ### Pré-requis
 
@@ -19,8 +19,8 @@ Merci d'utiliser les dernières versions.
 
 ### Instructions
 
-1. Cloner ce projet à l'aide de la commande "git clone https://github.com/Cycle9898/mobile-data-consumption-management.git"
-2. Se rendre dans le dossier avec un terminal
+1. Cloner ce projet à l'aide de la commande : `git clone https://github.com/Cycle9898/mobile-data-consumption-management.git`
+2. Se rendre dans le dossier avec un terminal : `cd mobile-data-consumption-management`
 3. Exécuter les commandes suivantes :
 
 ```bash
